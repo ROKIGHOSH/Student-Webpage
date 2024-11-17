@@ -58,8 +58,8 @@ def save_note():
             f.write(note_content)
 
     return jsonify(os.listdir(UPLOAD_FOLDER))
-
-if __name__ == '__main__':
+def main():
     with app.app_context():  # Add this block to create the tables within the application context
         db.create_all()  # Create database tables
-    app.run(debug=True)
+
+main()
